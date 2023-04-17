@@ -103,12 +103,12 @@
                         <canvas id="dht11Umidade"></canvas>
                     </div>
                     <div class="card-2">
-                        <canvas id="dht11Temperatura"></canvas>
+                        <canvas id="mediaTemp"></canvas>
                     </div>
 
                 </div>
 
-                <div class="kpis">
+                <!-- <div class="kpis">
 
                     <div class="card">
                         <div class="kpi-header">
@@ -133,7 +133,7 @@
                     <div class="card"></div>
                     <div class="card"></div>
                     
-                </div>
+                </div> -->
 
             </div>
         
@@ -200,12 +200,12 @@
                 }
             }
         );
-        /* -- dht11Temperatura -- */
-        var contextoDht11Temperatura = document.getElementById('dht11Temperatura').getContext('2d');
-        contextoDht11Temperatura.canvas.width = 1000;
-        contextoDht11Temperatura.canvas.height = 600;
-        var dht11Temperatura = new Chart(
-            contextoDht11Temperatura,
+        /* -- MediaTemperatura -- */
+        var contextoMediaTemp = document.getElementById('mediaTemp').getContext('2d');
+        contextoMediaTemp.canvas.width = 1000;
+        contextoMediaTemp.canvas.height = 600;
+        var mediaTemp = new Chart(
+            contextoMediaTemp,
             {
                 type: 'bar',
                 data: {
@@ -405,9 +405,8 @@
 
         setInterval(() => {
             obterDados(dht11Umidade, 'dht11/umidade');
-            obterDados(dht11Temperatura, 'dht11/temperatura');
+            obterDados(mediaTemp, 'MediaTemperatura');
             obterDados(luminosidade, 'luminosidade');
-            obterDados(lm35Temperatura, 'lm35/temperatura');
             obterDados(chave, 'chave');
         }, 1000);
 
